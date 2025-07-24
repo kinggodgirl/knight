@@ -10,7 +10,7 @@ function Square(props) {
     className += ' possible-move';
   }
 
-  const knightImage = <img src={knightIcon} alt="Knight" style={{ width: '50px', height: '50px' }} />;
+  const knightImage = <img src={knightIcon} alt="Knight" style={{ width: '50px', height: '50px', position: 'relative', top: '3px' }} />;
 
   return (
     <button className={className} onClick={props.onClick}>
