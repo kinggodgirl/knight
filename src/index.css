@@ -1,0 +1,100 @@
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #312e2b; /* Darker background */
+  color: #f0f0f0; /* Light text color for overall readability */
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-controls {
+  margin-bottom: 20px;
+}
+
+.game-controls select, .game-info button {
+    background-color: #584d44;
+    color: #f0f0f0;
+    border: 1px solid #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.game-info {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.board-container {
+  border: 10px solid #584d44; /* Wood-like border */
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  display: inline-block;
+  position: relative; /* For SVG overlay */
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.square {
+  background: #f0d9b5; /* Light wood color */
+  border: none;
+  float: left;
+  font-size: 24px; /* Adjusted for hint */
+  font-weight: bold;
+  line-height: 60px;
+  height: 60px;
+  width: 60px;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+  color: #333; /* Knight color */
+  user-select: none; /* Prevent text selection */
+  position: relative; /* For hint positioning */
+}
+
+.square.dark {
+    background: #b58863; /* Dark wood color */
+}
+
+.square.possible-move {
+  background-color: #90ee90 !important; /* Light green for possible moves */
+}
+
+.square.disabled {
+  background-color: #555;
+  pointer-events: none;
+}
+
+.hint {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 12px;
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.path-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+.path-line {
+  stroke: #ff00ff; /* Magenta color for the path */
+  stroke-width: 3;
+  fill: none;
+}
